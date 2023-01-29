@@ -1,91 +1,53 @@
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
+import { FcGoogle } from 'react-icons/fc'
 export default function Home() {
+  const arr=[
+    {
+      image:'\conversation.5acf03c4.svg', text:'Our AI will arrage for 1:1 conversation with match'
+    },
+    {
+      image:'/tell.9ad906c2.svg', text:'Tell us your background goals and what you are excited about'
+    },
+    {
+      image:'\connection.5e02f461.svg', text:'Each week we will see if you would like to meet with a new connection'
+    }
+  ]
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.jsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className=' grid  lg:grid-cols-2 md:grid-cols-2'>
+      <div className='pr-5 lg:py-20 md:py-20  py-7 lg:pr-20 md:pr-20 sm:pr-20'>
+        <p className='text-4xl sm:text-5xl lg:text-7xl md:text-7xl lg:font-bold lg:p-2 md:p-2 p-1'>Your network is waiting for you.</p>
+        <p className='lg:mr-20 md:mr-20 p-1 text-sm lg:text-lg md:text-lg mr-10'>We facilitate casual conversations that lead to not-so-casual professional impact. Powered by AI.</p>
+      <div className='h-40 bg-white flex flex-col p-5  mt-4 lg:mr-7 '>
+        <button className='border-2 border-black flex lg:space-x-2 md:space-x-0 items-center h-10 p-5 rounded-md drop-shadow-md text'>
+          <FcGoogle className='lg:w-10 h-5 lg:mr-2 md:mr-5'/>Sign up with google
+        </button>
+        <p className='text-center'>OR</p>
+      <div className='flex flex-end items-center '>
+        <input className='w-full h-10 text-xl rounded-none rounded-l-md border-black border-2' placeholder='Enter your email'/>
+        <button className='w-40  h-10 bg-indigo-500 rounded-r-md'>get startted</button>
+      </div>
+     </div>
+      <div className='flex'>
+        <p>Already have an account?</p>
+        <h6 className='text underline'>Login here</h6>
+      </div>
+      </div>
+    <div className='flex flex-col lg:py-10 md:py-10 items-center lg:my-0 md:my-0  '>
+      <p className='text-sm'>HOW ITS WORKS</p>
+      <p className='text-3xl font-bold pt-3 mr-10'>It's simple, really</p>
+      <img src='\stroke.01d02cb2.svg' alt='line'  className='w-[95px]  h-5 ml-40 mx-7'/>
+      <div className='relative w-80 h-40 ' id='slide'>
+      {
+        arr.map((item,index)=>
+        <div key={index} className='flex lg:flex-col md:flex-col justify-space mt-5'>
+          <img src={item.image} width={100} height={100} className='lg:w-[200px] lg:h-[150px] md:w-[200px] md:h-[150px]' />
+          <p className='text-center lg:text-lg md:text-lg  lg:mt-10 md:mt-10'>{item.text}</p>
         </div>
+        )
+      }
+        
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
+    </div>
   )
 }
