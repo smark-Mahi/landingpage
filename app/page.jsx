@@ -39,9 +39,9 @@ export default function Home() {
       <div className='relative w-80 h-40 ' id='slide'>
       {
         arr.map((item,index)=>
-        <div key={index} className='flex lg:flex-col md:flex-col justify-space mt-5'>
+        <div key={index} className='flex lg:flex-col md:flex-col justify-space mt-5 '>
           <img src={item.image} width={100} height={100} className='lg:w-[200px] lg:h-[150px] md:w-[200px] md:h-[150px]' />
-          <p className='text-center lg:text-lg md:text-lg  lg:mt-10 md:mt-10'>{item.text}</p>
+          <p className='text-center w-60 lg:text-lg md:text-lg  lg:mt-10 md:mt-10 lg:px-0 md:px-0 px-7'>{item.text}</p>
         </div>
         )
       }

@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className='h-screen bg lg:p-6 lg:px-15 items-center md:p-9 p-3  py-10'>
+      <body className='h-screen lg:bg md:bg lg:p-6 lg:px-15 items-center md:p-9 p-3  py-10'>
       <Header/>
         <div>{children}</div>
         <Footer/>
